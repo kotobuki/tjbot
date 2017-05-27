@@ -1,0 +1,31 @@
+{
+  "name": "physical_computing",
+  "description": "Examples for the physical computing workshop at Smart Craft Studio 2017",
+  "version": "0.0.2",
+  "author": "Shigeru Kobayashi <mayfair@iamas.ac.jp>",
+  "bugs": {
+    "url": "https://github.com/kotobuki/scs2017/issues"
+  },
+  "dependencies": {
+    "tjbot": "latest",
+    "johnny-five": "^0.10.13",
+    "request": "^2.63.0",
+    "mqtt": "^2.7.2"
+  },
+  "main": "test.js",
+  "homepage": "https://github.com/kotobuki/scs2017/tree/master/tutorial/physical-computing",
+  "keywords": [
+    "tjbot",
+    "Raspberry Pi",
+    "Johnny-Five"
+  ],
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kotobuki/scs2017.git"
+  },
+  "scripts": {
+    "start": "node test.js",
+    "test": "node test.js"
+  }
+}
