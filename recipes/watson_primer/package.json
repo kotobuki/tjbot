@@ -7,7 +7,8 @@
     "url": "https://github.com/ibmtjbot/tjbot/issues"
   },
   "dependencies": {
-    "tjbot": "latest"
+    "tjbot": "latest",
+    "johnny-five": "^0.10.13"
   },
   "main": "conversation.js",
   "homepage": "https://github.com/ibmtjbot/tjbot/tree/master/recipes/conversation",
