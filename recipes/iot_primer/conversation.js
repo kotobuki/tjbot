@@ -19,6 +19,10 @@ var tjConfig = {
     microphoneDeviceId: 'plughw:1,0',
     inactivityTimeout: -1, // -1 to never timeout or break the connection. Set this to a value in seconds
     language: 'en-US' // see TJBot.prototype.languages.listen 
+  },
+  robot: {
+    gender: 'male',
+    name: 'Watson'
   }
 };
 
