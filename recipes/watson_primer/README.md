@@ -85,7 +85,7 @@ Go to the dashboard of your Bluemix account, click on one of your services, go t
 
 Open terminal in RPI, navigate (cd) to the conversation recipe folder, and open config.js in the nano text editor.
 ```js
-  cd /home/Desktop/tjbot/recipes/watson_primer/
+  cd ~/Desktop/tjbot/recipes/watson_primer/
   sudo nano config.js
 ```
 Fill in `exports.credentials` for all three services. 
