@@ -85,7 +85,7 @@ Go to the dashboard of your Bluemix account, click on one of your services, go t
 
 Open terminal in RPI, navigate (cd) to the conversation recipe folder, and open config.js in the nano text editor.
 ```js
-  cd /home/Desktop/scs2017/tutorial/physical-computing/
+  cd /home/Desktop/tjbot/recipes/watson_primer/
   sudo nano config.js
 ```
 Fill in `exports.credentials` for all three services. 
@@ -116,7 +116,7 @@ double check all the credentials and the Workspace ID is in place. `ctrl+x`, `y`
 ## Step 4: You had me at hello
 Make sure you are still inside the `physical-computing` folder, if not nevigate there with the following command: 
 ```js
-  cd ~/Desktop/scs2017/tutorial/physical-computing/
+  cd ~/Desktop/tjbot/recipes/watson_primer/
 ```
 To run an sample code, do `sudo node <filename>`:
 ```js
@@ -130,7 +130,7 @@ In Topic 3, we are going to look at how to send and recieve custom values in rea
 ## Step 1: understand `conversation.js`
 Open terminal in RPI, navigate (cd) to the conversation recipe folder, and open `conversation.js` in the nano text editor.
 ```js
-  cd ~/Desktop/scs2017/tutorial/physical-computing/
+  cd ~/Desktop/tjbot/recipes/watson_primer/
   sudo nano conversation.js
 ```
 ## Step 2: in-file configuration
