@@ -22,7 +22,7 @@ var tjConfig = {
   },
   robot: {
     gender: 'male',
-    name: 'Watson'
+    name: ''
   }
 };
 
