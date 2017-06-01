@@ -76,7 +76,21 @@ To connect to your Pi, copy and paste the following command into the terminal wi
 
 `ssh pi@<IP address>`
 
-Login as `Pi`, and the password is `raspberry`.
+Login as `Pi`, and the password is `raspberry`. After login, navigate to Desktop
+
+`cd Desktop`
+
+Now clone all the files we need from the online respository
+
+`git clone -b scs2017 https://github.com/kotobuki/tjbot.git`
+
+Time to install, navigate to the workshop folder:
+
+`cd ~/Desktop/tjbot/recipes/watson_primer/`
+
+to install use the following commend!
+
+`npm install`
 
 ## Step 2: Copy the credentials into the config.text
 Go to the dashboard of your Bluemix account, click on one of your services, go to 'Service Credentials' on the top-left menu and copy your credentials into clipboard.
