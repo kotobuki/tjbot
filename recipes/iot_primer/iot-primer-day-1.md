@@ -34,6 +34,13 @@ $ cd tjbot/recipes/iot_primer/
 $ npm install
 ```
 
+If it has already been downloaded, you can update to the latest version by doing as follows.
+
+```sh
+$ cd ~/Desktop/tjbot/recipes/iot_primer/
+$ git pull
+```
+
 ### Upload Firmware to Your Arduino Board
 
 First, connect an Arduino board to a Raspberry Pi with a USB cable, and run `interchange` in interactive mode on the Raspberry Pi.
