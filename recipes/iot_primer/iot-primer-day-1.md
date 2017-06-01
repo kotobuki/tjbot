@@ -29,8 +29,8 @@ If you have not downloaded it yet, download the sample on Raspberry Pi as follow
 
 ```sh
 $ cd ~/Desktop/
-$ git clone https://github.com/kotobuki/scs2017-iot-primer.git
-$ cd scs2017-iot-primer/
+$ git clone -b scs2017 https://github.com/kotobuki/tjbot.git
+$ cd tjbot/recipes/iot_primer/
 $ npm install
 ```
 
@@ -90,7 +90,7 @@ flash complete.
 Congratulations! You are now ready to use the Arduino board from the Raspberry Pi.
 
 
-## Basic
+## Hands-On
 
 ### Digital Input
 
@@ -103,6 +103,8 @@ Digital input takes either 0 (low) or 1 (high) value.
 #### Code
 
 The following code can capture the moment when the specified digital input changes.
+
+`digital-input.js`
 
 ```js
 var five = require('johnny-five');
@@ -124,7 +126,9 @@ board.on('ready', function() {
 });
 ```
 
-By utilizing various [component classes](http://johnny-five.io/api/) provided by Johnny-Five, you can write more human-readable code. In this case, by using the [Button](http://johnny-five.io/api/button/) class, you can express it by `press` or `release`, not `high` or `low` representing the electrical condition.
+By utilizing various [component classes](http://johnny-five.io/api/) provided by Johnny-Five, you can write more human-readable code (`button.js`). In this case, by using the [Button](http://johnny-five.io/api/button/) class, you can express it by `press` or `release`, not `high` or `low` representing the electrical condition.
+
+`button.js`
 
 ```js
 var five = require('johnny-five');
@@ -154,6 +158,8 @@ Digital output takes either 0 (low) or 1 (high) value.
 
 #### Code
 
+`digital-output.js`
+
 ```js
 var five = require('johnny-five');
 var board = new five.Board();
@@ -181,6 +187,8 @@ board.on('ready', function() {
 
 More specific classes are also available for digital output, as in Button for Pin in the case of digital input. In this case, you can write code that is more human readable by using LED instead of Pin.
 
+`button-led.js`
+
 ```js
 var five = require('johnny-five');
 var board = new five.Board();
@@ -200,6 +208,8 @@ board.on('ready', function() {
 ```
 
 Since the LED class has more advanced functions, expressions accompanied with changes on the time axis, such as blinking, fading in and out repeatedly, can be described with extremely short codes.
+
+`button-led-blink.js`
 
 ```js
 var five = require('johnny-five');
@@ -236,6 +246,8 @@ Analog input takes values ​​of 1024 steps from 0 to 1023.
 
 This method is common to all sensors that output results due to voltage change, such as potentiometer, analog photosensor, analog temperature sensor.
 
+`analog-input.js`
+
 ```js
 var five = require('johnny-five');
 var board = new five.Board();
@@ -250,6 +262,8 @@ board.on('ready', function() {
 ```
 
 By combining with the LED in the following way, the brightness of the LED can be continuously changed. The reason why the `scaleTo` method is used here is that the range of the value of the analog input is 0 to 1023, whereas the range of the brightness of the LED is 0 to 255.
+
+`sensor-led.js`
 
 ```js
 var five = require('johnny-five');
@@ -267,6 +281,8 @@ board.on('ready', function() {
 ```
 
 With the idea of ​​threshold, you can capture the moment when the value of the sensor changes. For example, this can be used when measuring the brightness of ambient light with a light sensor (e.g. [Grove - Light Sensor (P) v1.1](https://www.seeedstudio.com/Grove-Light-Sensor-%28P%29-v1.1-p-2693.html)) and doing something according to the brightness. To implement this, set two thresholds (low and high), compare the current value with the two thresholds, determine the current state, and execute the process when it changes from the previous state .
+
+`threshold.js`
 
 ```js
 var five = require('johnny-five');
@@ -316,8 +332,6 @@ board.on('ready', function() {
 
 * Make a sample that turns on when the ambient light gets dark and turns off when it glows bright
 
-## Advanced
-
 ### PIR Motion Sensor
 
 #### Circuit
@@ -325,6 +339,8 @@ board.on('ready', function() {
 * D4: [Grove - PIR Motion Sensor](https://www.seeedstudio.com/grove-pir-motion-sensor-p-802.html)
 
 #### Code
+
+`pir-motion-sensor.js`
 
 ```js
 var five = require('johnny-five');
@@ -358,6 +374,8 @@ Note: The module can also be set as retriggerable or un-retriggerable by changin
 
 #### Code
 
+`sensor-servo.js`
+
 ```js
 var five = require('johnny-five');
 var board = new five.Board();
@@ -374,29 +392,9 @@ board.on('ready', function() {
 });
 ```
 
-### Temperature and Humidity Sensor
+#### Try
 
-#### Circuit
-
-* I2C: [Grove Temperature&Humidity Sensor (High-Accuracy & Mini)](https://www.seeedstudio.com/Grove-TemperatureHumidity-Sensor-HighAccuracy-Mini-p-1921.html)
-
-#### Code
-
-```js
-var five = require('johnny-five');
-var board = new five.Board();
-
-board.on('ready', function() {
-  var sensor = new five.Multi({
-    controller: 'TH02'
-  });
-
-  sensor.on('change', function() {
-      console.log([this.thermometer.celsius + ' ºC', this.hygrometer.relativeHumidity + ' %');
-      });
-  });
-});
-```
+* Try adding an animation to the servo with reference to [the API document](http://johnny-five.io/api/animation/)
 
 ### Ultrasonic Ranger Sensor
 
@@ -414,7 +412,7 @@ $ interchange install --interactive
 ? Install firmata version? Yes
 ? Firmata name [optional] 
 ? Choose a board uno
-? Choose a port /dev/cu.usbmodem1421
+? Choose a port /dev/ttyACM0
 Installing hc-sr04 from npm
 ...
 flashing, please wait...
@@ -422,6 +420,8 @@ flash complete.
 ```
 
 #### Code
+
+`ultrasonic-ranger.js`
 
 ```js
 var five = require('johnny-five');
@@ -447,7 +447,7 @@ To use other sensors and actuators, use `interchange` again to write normal firm
 $ interchange install --interactive
 ? Choose a firmware StandardFirmata
 ? Choose a board uno
-? Choose a port /dev/cu.usbmodem1421
+? Choose a port /dev/ttyACM0
 Retrieving manifest data from GitHub
 Downloading hex file
 connected
@@ -459,10 +459,6 @@ flash complete.
 
 ## References
 
-* [TJBot - Build a Talking Robot With Watson Conversation](http://www.instructables.com/id/Build-a-Talking-Robot-With-Watson-and-Raspberry-Pi/)
-* [IBM TJBot](https://github.com/ibmtjbot/tjbot)
-* [update-nodejs-and-nodered](https://github.com/node-red/raspbian-deb-package/blob/master/resources/update-nodejs-and-nodered)
 * [Johnny-Five](http://johnny-five.io/)
 * [nodebots-interchange](https://github.com/johnny-five-io/nodebots-interchange)
 * [Airbnb JavaScript Style Guide() {};](https://github.com/airbnb/javascript)
-* [Arduino Experimenter's Guide for NodeJS](http://node-ardx.org/)
