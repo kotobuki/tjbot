@@ -117,13 +117,20 @@ board.on('ready', function() {
         tj.speak(response.output.text.join(' ').trim());
 
         // Control according to the 'action' specified in the Dialog editor
-        if (response.output.action === 'move_fast') {
+        if (response.output.action === 'led_on') {
+          led.fadeIn();
+        } else if (response.output.action === 'led_off') {
+          led.fadeOut();
+        }
+
+        // Control according to the 'servoaction' specified in the Dialog editor
+        if (response.output.servoaction === 'move_fast') {
           animation.enqueue({
             cuePoints: [0, 0.25, 0.75, 1],
             keyFrames: [{ value: 90 }, { value: 180 }, { value: 0 }, { value: 90 }],
             duration: 1000
           });
-        } else if (response.output.action === 'move_slow') {
+        } else if (response.output.servoaction === 'move_slow') {
           animation.enqueue({
             cuePoints: [0, 0.25, 0.75, 1],
             keyFrames: [{ value: 90 }, { value: 180, easing: 'inQuad' }, { value: 0, easing: 'outQuad' }, { value: 90 }],
