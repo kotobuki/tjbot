@@ -207,7 +207,7 @@ While we are at the Watson Conversation Editor, let's add a few more Dialog node
 <img src="images/turn_off_DialogNode.png" width="65%">
 
 ## Step 6: Add our custom value in the Watson Converation Editor
-When Watson Conversation decided on a response, it will send back the response text in a JSON file. We are going to insert our custom value `"action" = "led_on"` into Turn On LED dialog node's JSON file and `"action" = "led_off"` into Turn Off LED dialog node's JSON file. I made up the name `"action"` and its value according to the situation (based on Kobayashi sensei's early experiment), they have to be consistant on both the editor side and the Raspberry Pi (`conversation.js`) side.
+When Watson Conversation decided on a response, it will send back the response text in a JSON file. We are going to insert our custom value `"action" = "light_on"` into Turn On LED dialog node's JSON file and `"action" = "light_off"` into Turn Off LED dialog node's JSON file. I made up the name `"action"` and its value according to the situation (based on Kobayashi sensei's early experiment), they have to be consistant on both the editor side and the Raspberry Pi (`conversation.js`) side.
 
 ### Turn On LED
 <img src="images/turn_on_JSON.png" width="65%">
