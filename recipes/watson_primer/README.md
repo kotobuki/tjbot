@@ -26,7 +26,9 @@ Enter the promo code from checkout. Click on ‘Apply’. IT’S RAGE FREE NOW!
 <img src="images/diagramNo1.jpg" width="85%">
 You will use 3 types of Watson services in today’s workshop:<br />
 1.[Watson Speech to Text](https://www.ibm.com/watson/developercloud/speech-to-text.html)<br />
+
 2.[Watson Text to Speech](https://www.ibm.com/watson/developercloud/text-to-speech.html)<br />
+
 3.[Watson Conversation](https://www.ibm.com/watson/developercloud/conversation.html)<br />
 
 Let's start with the Watson Speech to Text service.
