@@ -39,6 +39,7 @@ If it has already been downloaded, you can update to the latest version by doing
 ```sh
 $ cd ~/Desktop/tjbot/recipes/iot_primer/
 $ git pull
+$ npm install
 ```
 
 ### Upload Firmware to Your Arduino Board
