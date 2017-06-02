@@ -73,9 +73,9 @@ tj.listen(function(msg) {
       tj.speak(response.output.text.join(' ').trim());
 
       // Control according to the 'action' specified in the Dialog editor
-      if (response.output.action === 'led_on') {
+      if (response.output.action === 'light_on') {
         led.fadeIn();
-      } else if (response.output.action === 'led_off') {
+      } else if (response.output.action === 'light_off') {
         led.fadeOut();
       }
     });
