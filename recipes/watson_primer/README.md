@@ -7,7 +7,7 @@ Prepared by professor Kyle Li at Parson School of Design for Smart Craft Studio 
 
 <img src="images/conversationDiagram.png" width="100%">
 
-The goal of this tutorial chain is to establish a framework for conversation inspired experiences in both ditial and physical spaces. The conversation portion is built on top of IBM Watson for its friendly and powerful GUI based chatbot editor. 
+The goal of this tutorial chain is to establish a framework for conversation inspired experiences in both digital and physical spaces. The conversation portion is built on top of IBM Watson for its GUI based chatbot editor. This framework allows us to connect to our physical space through conversation and sensors (inputs) and motors (outputs). 
 
 ## Step 2: Setup accounts
 ### IBM Academic account and IBM Bluemix trial account are two different accounts.
