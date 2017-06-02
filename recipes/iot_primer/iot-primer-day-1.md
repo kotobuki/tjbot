@@ -154,6 +154,11 @@ board.on('ready', function() {
 });
 ```
 
+#### Note
+
+When plugging / unplugging Grove modules, disconnect the USB cable of the Arduino board. After changing the circuit, insert the USB cable into the Arduino board again.
+
+
 ### Digital Output
 
 Digital output takes either 0 (low) or 1 (high) value.
