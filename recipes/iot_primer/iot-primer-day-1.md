@@ -244,7 +244,7 @@ board.on('ready', function() {
 
 #### Try
 
-* Replace `blink()` with [other methods](http://johnny-five.io/api/led/#api) of `Led` such as `pulse()`, `fadeIn()`, `fadeOut()` and so on.
+* Replace `blink()` with [other methods](http://johnny-five.io/api/led/#api) of `Led` such as `pulse()`, `fadeIn()` for `press`, `fadeOut()` for `release` and so on.
 * Replace the button with a [Grove - Touch Sensor](https://www.seeedstudio.com/grove-touch-sensor-p-747.html).
 
 ### Analog Input
