@@ -15,13 +15,21 @@ To connect home-brew devices as a service to IFTTT, access the following URL to 
 
 ![](images/ifttt-trigger-sequence.png)
 
+#### Try out
+
+By clicking the "Documentation" button in the upper right corner of the page, you can access the page where you can actually issue a trigger and check its operation.
+
 To trigger the Maker Webhooks service, simply access the following URL and generate a web request: At this time, the key is used to check if it is the correct request. For this reason, it is necessary not to disclose key information to outside.
 
 `URL` https://maker.ifttt.com/trigger/{event}/with/key/{key}
 
-In the IFTTT application, please create an applet triggered by Maker Webhooks service. The action can be anything but it is a good idea to use the IF Notification service as it is easier to understand at the testing stage.
+Next, create an applet triggered by Maker Webhooks on [the "My Applets" tab](https://ifttt.com/my_applets) of the IFTTT web page (or smartphone application). The action can be anything but it is a good idea to use the IF Notification service as it is easier to understand at the testing stage.
 
-Once you have the Applet, run the sample at the terminal as shown below and press the button connected to the GrovePi board. If it works correctly, you should receive a notification from the IFTTT application in several seconds.
+Once you have created your Applet, issue a trigger from the "Documentation" page and confirm that notifications will arrive on your smartphone.
+
+#### Issue trigger from Raspberry Pi
+
+Run the sample at the terminal as shown below and press the button connected to the GrovePi board. If it works correctly, you should receive a notification from the IFTTT application in several seconds.
 
 ```sh
 $ node ifttt-trigger.js
@@ -95,6 +103,12 @@ To generate a trigger at an arbitrary timing, use the "Button widget" service. T
 
 Once you have the Applet, edit `exports.beebotteChannelToken` in `config.js` to put the channel token and run the sample at the terminal as shown below. If it is working properly, if you tap the button of the widget set by the IFTTT application, the message should arrive in several seconds.
 
+```sh
+$ node ifttt-action.js 
+topic: ifttt/action
+message: {"data":"ping","ts":1495459924887,"ispublic":false}
+```
+
 ```js
 var led = new five.Led(3);
 
@@ -128,18 +142,49 @@ mqttClient.on('message', function(topic, message) {
 mqttClient.subscribe('ifttt/action');
 ```
 
-```sh
-$ node ifttt-action.js 
-topic: ifttt/action
-message: {"data":"ping","ts":1495459924887,"ispublic":false}
-```
+## MESH
+
+### Materials
+
+* MESH Tags: 1 set (3 tags)
+* iPhone, iPad or iPod touch (see [Which devices are compatible with the MESH?](http://support.meshprj.com/hc/en-us/articles/212601267-Which-devices-are-compatible-with-the-MESH-)): 1
+
+### Getting started with MESH
+
+#### What is [MESH](https://meshprj.com/en/)?
+
+* A tool that let you explore the world of IoT (Internet of things) using everyday objects
+* Consisting of the MESH App and the MESH Tags
+* Various MESH Tag are available:
+  * LED Tag: a multiple color LED
+  * Button Tag: an input device that allows you to create your own switch
+  * Motion Tag: an input device that detects moving people and even animals
+  * Move Tag: detects motion patterns
+  * Brightness Tag: an input device that detects and notifies you about a change in brightness
+  * Temperature & Humidity Tag: an input device that can detect a change in temperature or humidity
+  * GPIO Tag: has a digital and analog input/output that connects other sensors or actuators
+* With MESH, you can:
+  * Connect to various internet services (i.e. Gmail and IFTTT)
+  * Connect to various wireless devices (i.e. Philips Hue and Olympus Air)
+  * Control functions on your smartphone or tablet (e.g. camera, speaker, microphone and notification)
+  * Supports both iOS and Android (firmware update required for MESH Tags sold before Android's support began)
+
+#### Getting familiar with MESH
+
+* Tutorial > Start without MESH Tags  
+  ![Step 1](images/mesh-step-1.png)
+* Add a MESH Tags and follow a tutorial to learn (Note: please move slightly away from each other for the avoidance of confusion and confirm ID to make sure)  
+  ![Step 2](images/mesh-step-2.png)
+* Detect a button press with a Button Tag and give a feedback by the light of a LED Tag
+* Detect a motion with a Motion Tag and give a feedback by the light of a LED Tag 
+
+#### Issue IFTTT trigger from a MESH tag
+
+Add an IFTTT Tag on your canvas and try with a Tag and create a recipes using MESH as a trigger or an action
+  
+![IFTTT](images/mesh-ifttt.png)
 
 ## References
 
-* [TJBot - Build a Talking Robot With Watson Conversation](http://www.instructables.com/id/Build-a-Talking-Robot-With-Watson-and-Raspberry-Pi/)
-* [IBM TJBot](https://github.com/ibmtjbot/tjbot)
-* [update-nodejs-and-nodered](https://github.com/node-red/raspbian-deb-package/blob/master/resources/update-nodejs-and-nodered)
-* [Johnny-Five](http://johnny-five.io/)
-* [nodebots-interchange](https://github.com/johnny-five-io/nodebots-interchange)
+* [MESH | Supported IFTTT Applets](http://support.meshprj.com/hc/en-us/articles/115003652408)
 * [Airbnb JavaScript Style Guide() {};](https://github.com/airbnb/javascript)
-* [Arduino Experimenter's Guide for NodeJS](http://node-ardx.org/)
