@@ -23,6 +23,9 @@ var tjConfig = {
   robot: {
     gender: 'male',
     name: ''
+  }, 
+  speak:{
+    language: 'en-US'
   }
 };
 
