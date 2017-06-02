@@ -1,19 +1,6 @@
 # WATSON PI PRIMER
 Prepared by professor Kyle Li at Parson School of Design for Smart Craft Studio 2017. 
 
-Table of contents
-=================
-  * [Topic 1: Set up Watson Conversation Service](# Topic 1: Set up Watson Conversation Service)
-  * [Usage](#usage)
-    * [STDIN](#stdin)
-    * [Local files](#local-files)
-    * [Remote files](#remote-files)
-    * [Multiple files](#multiple-files)
-    * [Combo](#combo)
-  * [Tests](#tests)
-  * [Dependency](#dependency)
-
-
 # Topic 1: Set up Watson Conversation Service
 
 ## Step 1: The Flow
