@@ -5,7 +5,7 @@ Prepared by professor Kyle Li at Parson School of Design for Smart Craft Studio 
 
 ## Step 1: The Flow
 
-<img src="images/conversation_arch_overview.png" width="100%">
+<img src="images/system.jpg" width="100%">
 
 ## Step 2: Setup accounts
 ### IBM Academic account and IBM Bluemix trial account are two different accounts.
