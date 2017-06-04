@@ -52,6 +52,9 @@ var previousState = STATE.UNKNOWN;
 // instantiate our TJBot!
 var tj = new TJBot(hardware, tjConfig, credentials);
 
+// create a context variable to remember where we are in the conversation tree
+var context = {};
+
 board.on('ready', function() {
   var button = new five.Button(2);
   led = new five.Led(3);
@@ -156,12 +159,14 @@ tj.listen(function(msg) {
       input: {
         'text': msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), ''),
         'button': buttonState
-      }
+      },
+      context: context
     };
 
     // send to the conversation service
     tj._conversation.message(turn, function(err, response) {
       console.log(response.output);
+      context = response.context;
       tj.speak(response.output.text.join(' ').trim());
 
       // Control according to the 'action' specified in the Dialog editor
