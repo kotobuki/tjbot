@@ -67,7 +67,7 @@ tj.listen(function(msg) {
         'text': msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), ''),
         'button': buttonState
       }, 
-	    context: context
+      context: context
     };
 
     // send to the conversation service
