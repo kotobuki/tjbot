@@ -53,6 +53,8 @@ board.on('ready', function() {
 // instantiate our TJBot!
 var tj = new TJBot(hardware, tjConfig, credentials);
 
+// create a conext variable to remember where we are in the conversation tree
+var context = {};
 // listen for utterances with our attentionWord and send the result to
 // the Conversation service
 tj.listen(function(msg) {
@@ -64,12 +66,14 @@ tj.listen(function(msg) {
       input: {
         'text': msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), ''),
         'button': buttonState
-      }
+      }, 
+	    context: context
     };
 
     // send to the conversation service
     tj._conversation.message(turn, function(err, response) {
       console.log(response.output);
+      context = response.context;
       tj.speak(response.output.text.join(' ').trim());
 
       // Control according to the 'action' specified in the Dialog editor
